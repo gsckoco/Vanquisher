@@ -1,8 +1,9 @@
 typedef struct entity
 {
-	void (*update)(void); // Every frame
-	void (*init)(/* Anything that is needed upon creation */); // On creation
-	void (*del)(void); // On deletion
+	void (*update)(struct entity *self); // Every frame
+	void (*init)(struct entity *self, char * anything/* Anything that is needed upon creation */); // On creation
+	void (*del)(struct entity *self); // On deletion
+	char * name;
 } Entity;
 
 typedef struct lastEntity
